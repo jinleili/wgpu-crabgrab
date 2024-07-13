@@ -1,0 +1,32 @@
+[package]
+name = "wgpu-in-app"
+authors = ["jinleili"]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.76"
+
+[lib]
+crate-type = ["staticlib"]
+
+[features]
+default = []
+
+[dependencies]
+app-surface = { version = "0.4.4", features = ["mac_catalyst"] }
+# app-surface = {path="../idroid/wgpu-in-app/app-surface", features = ["mac_catalyst"]}
+bytemuck = { version = "1.14", features = ["derive"] }
+cfg-if = "1.0"
+glam = "0.27"
+crabgrab = { version = "*", features = ["wgpu", "bitmap"] }
+log = "0.4"
+noise = { version = "0.8", default-features = false }
+pollster = "0.3"
+rand = "0.7.2"
+wgpu = "0.20"
+image = { version = "*" }
+tokio = { version = "*", features = ["full"] }
+
+# macOS, iOS
+libc = "0.2"
+objc = "0.2.7"
+core-graphics = "0.23.1"
